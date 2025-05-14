@@ -40,5 +40,19 @@ public class KataStringCalculatorTDDTest {
         assertEquals(100,kataStringCalculatorTDD.addString("20,55,25"));
     }
 
+    @Test
+    public void testWithNegativeNumbers() {
+        try {
+            kataStringCalculatorTDD.addString("-25,5");
+        } catch (IllegalAccessException e) {
+            assertEquals(e.getMessage(),"negative numbers are not allowed -25");
+        }
+    }
+
+    @Test
+    public void testNumbersInNewLine() throws IllegalAccessException {
+        assertEquals(42, kataStringCalculatorTDD.addString("15\n20,3\n4"));
+    }
+
 
 }
