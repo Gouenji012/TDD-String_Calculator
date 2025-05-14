@@ -40,6 +40,9 @@ public class KataStringCalculatorTDD {
             if (Integer.parseInt(str) < 1000) {
                 addition += Integer.parseInt(str);
             }
+            if (!neg.toString().equals("")) {
+                throw new IllegalAccessException("negative numbers are not allowed " + neg);
+            }
 
         }
         return addition;
